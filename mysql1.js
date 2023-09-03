@@ -150,18 +150,26 @@ async function main()
 //INSERT MARKS
         // console.log("INSERT MARKS")
         // let marks = [
-        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (14, 11, '2010-04-21', 8) ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
-        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (15, 12, '1970-06-12', 7)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
-        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (16, 13, '2018-10-14', 10)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
-        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (17, 14, '2019-07-09', 1)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
-        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (18, 15, '2019-10-09', 3)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
-        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (19, 16, '2023-09-02', 2)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
-        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (20, 17, '2003-07-11', 5)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
-        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (21, 18, '1996-08-09', 10)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
-        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (22, 19, '2015-05-30', 6)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
-        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (23, 20, '2008-12-31', 4)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
-
-
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (4, 1, '2023-01-20', 8) ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (5, 2, '2023-02-20', 6) ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (6, 3, '1970-06-12', 7)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (7, 4, '2018-10-14', 10)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (8, 5, '2019-07-09', 1)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (9, 6, '2019-10-09', 3)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (10, 7, '2023-09-02', 2)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (11, 8, '2019-10-09', 3)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (12, 9, '2003-07-11', 5)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (13, 10, '1996-08-09', 10)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (14, 11, '2015-05-30', 6)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (15, 12, '2008-12-31', 4)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (16, 13, '1968-03-10', 9)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (17, 14, '2001-06-16', 6)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (18, 15, '2017-08-04', 7)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (19, 16, '1999-09-11', 5)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (20, 17, '2010-05-25', 9)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (21, 18, '2013-11-14', 4)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+            // "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (22, 19, '2005-02-07', 10)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
+        //     "INSERT INTO marks (student_id, subject_id, date, mark) VALUES (23, 20, '2022-02-19', 8)  ON DUPLICATE KEY UPDATE student_id = VALUES(student_id)",
         // ];
 
         // for (let mark of marks) {
