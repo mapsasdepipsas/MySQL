@@ -28,20 +28,35 @@ async function main()
         // await connection.end();
 
         //BORRAR NOTAS 2022 Y >5
-        // await connection.execute(`DELETE FROM marks WHERE YEAR(date) = YEAR(CURDATE()) - 1 AND mark > 5;`);
-        // console.log("Se han borrado las notas.");
-        // await connection.end();
+        // try {
+        //     // Crear una sentencia preparada con parámetros
+        //     let year = new Date().getFullYear() - 1;
+        //     let nota = 5;
+        //     let borrar = 'DELETE FROM marks WHERE YEAR(date) = ? AND mark > ?';
+        //     let [result] = await connection.execute(borrar, [year, nota]);
+        
+        //     console.log(`Se han borrado ${result.affectedRows} notas.`);
+        //   } catch (error) {
+        //     console.error('Error al borrar las notas:', error);
+        //   } finally {
+        //     await connection.end();
+        //   }
 
         //ESTUDIANTES AÑO INGRESO 2023
         // try {
-        //     let ingreso2023 = `SELECT * FROM students WHERE ingresoyear = 2023;`;
-        
-        //     let [filas, campos] = await connection.execute(ingreso2023);
-            
+        //     let ingresoYear = 2023; // Puedes cambiar esto al valor deseado
+          
+        //     // Crear la sentencia preparada
+        //     let ingreso2023 = `SELECT * FROM students WHERE ingresoyear = ?;`;
+          
+        //     // Ejecutar la sentencia preparada con el valor proporcionado
+        //     let [filas, campos] = await connection.execute(ingreso2023, [ingresoYear]);
+          
         //     console.table(filas);
         //   } catch (error) {
         //     await connection.end();
         //   }
+          
 
         //NUMERO PROFESORES POR ASIGNATURA
         // try {
@@ -50,9 +65,10 @@ async function main()
         //       LEFT JOIN subject_teacher ON subjects.subject_id = subject_teacher.subject_id
         //       LEFT JOIN teachers ON subject_teacher.teacher_id = teachers.teacher_id
         //       GROUP BY subjects.title;`;
-        
+          
+           
         //     let [filas, campos] = await connection.execute(numprofes);
-
+          
         //     console.table(filas);
         //   } catch (error) {
         //     await connection.end();
@@ -64,43 +80,51 @@ async function main()
           //RETO 2 
 
         //ID 1-20 Y NOTA O >8 Y FECHA AÑO PASADO
-        // let nota = `SELECT mark_id, mark FROM marks WHERE (student_id BETWEEN 1 AND 20) OR (mark > 8 AND YEAR(date) = YEAR(CURDATE()) - 1)`;
-
         // try {
-        //   let [rows, fields] = await connection.execute(nota);
+        //     let minMark = 8;
+        //     let minStudentID = 1;
+        //     let maxStudentID = 20;
+        //     let currentYear = new Date().getFullYear() - 1;
           
-        //   console.log('Tabla:');
-        //   console.table(rows);
-        // } catch (err) {
-        //   await connection.end();
-        // }
+        //     let nota = `SELECT mark_id, mark FROM marks WHERE (student_id BETWEEN ? AND ?) OR (mark > ? AND YEAR(date) = ?);`;
+          
+        //     let [rows, fields] = await connection.execute(nota, [minStudentID, maxStudentID, minMark, currentYear]);
+          
+        //     console.log('Tabla:');
+        //     console.table(rows);
+        //   } catch (err) {
+        //     await connection.end();
+        //   }
+          
     
         //MEDIA NOTAS 2023 POR ASIGNATURA
-    //     let notamedia = `SELECT subjects.title, YEAR(marks.date) AS year, AVG(marks.mark) AS average_mark FROM marks
-    // INNER JOIN subjects ON marks.subject_id = subjects.subject_id WHERE YEAR(marks.date) = YEAR(CURDATE()) GROUP BY subjects.title, year`;
-        
-    //     try {
-    //         let [filas, campos] = await connection.execute(notamedia);
-            
-    //         console.log('Tabla:');
-    //         console.table(filas);
-    //         } catch (err){
-    //         await connection.end();
-    //       }
+        // try {
+        //     let notamedia = `SELECT subjects.title, YEAR(marks.date) AS year, AVG(marks.mark) AS average_mark FROM marks
+        //       INNER JOIN subjects ON marks.subject_id = subjects.subject_id WHERE YEAR(marks.date) = YEAR(CURDATE()) GROUP BY subjects.title, year;`;
+          
+        //     let [filas, campos] = await connection.execute(notamedia);
+          
+        //     console.log('Tabla:');
+        //     console.table(filas);
+        //   } catch (err) {
+        //     await connection.end();
+        //   }
+          
 
     //MEDIA NOTAS POR ALUMNO
     // try {
     //     let notamedia = `SELECT students.student_id, students.first_name, students.last_name, AVG(marks.mark) AS notamedia FROM students
     //       INNER JOIN marks ON students.student_id = marks.student_id WHERE YEAR(marks.date) = YEAR(CURDATE())
     //       GROUP BY students.student_id, students.first_name, students.last_name;`;
-    
-    //     const [filas, campos] = await connection.execute(notamedia);
-    
+      
+    //     let [filas, campos] = await connection.execute(notamedia);
+      
     //     console.log('Media por estudiante 2023:');
     //     console.table(filas);
     //   } catch (error) {
     //     await connection.end();
     //   }
+      
     
 
         //RETO 3
@@ -111,14 +135,15 @@ async function main()
         //     let reto3 = `SELECT students.first_name, students.last_name, subjects.title AS subject_title FROM students
         //       INNER JOIN marks ON students.student_id = marks.student_id
         //       INNER JOIN subjects ON marks.subject_id = subjects.subject_id;`;
-        
+          
         //     let [filas, campos] = await connection.execute(reto3);
-        
+          
         //     console.log('Alumnos y asignaturas:');
         //     console.table(filas);
         //   } catch (error) {
         //     await connection.end();
         //   }
+          
         
 
         //RETO 4
@@ -129,14 +154,15 @@ async function main()
         //       FROM teachers
         //       INNER JOIN subject_teacher ON teachers.teacher_id = subject_teacher.teacher_id
         //       INNER JOIN subjects ON subject_teacher.subject_id = subjects.subject_id;`;
-        
+          
         //     let [filas, campos] = await connection.execute(asignatura);
-        
+          
         //     console.log('Profes y asignaturas:');
         //     console.table(filas);
         //   } catch (error) {
         //     await connection.end();
         //   }
+          
 
 
         //RETO 5
@@ -145,21 +171,22 @@ async function main()
 
         // try {
         //     let reto5 = `SELECT subjects.title AS subject_title, teachers.first_name AS teacher_first_name,
-        //     teachers.last_name AS teacher_last_name, COUNT(DISTINCT marks.student_id) AS total_alumnos
+        //       teachers.last_name AS teacher_last_name, COUNT(DISTINCT marks.student_id) AS total_alumnos
         //       FROM subjects
         //       INNER JOIN subject_teacher ON subjects.subject_id = subject_teacher.subject_id
         //       INNER JOIN teachers ON subject_teacher.teacher_id = teachers.teacher_id
         //       LEFT JOIN marks ON subjects.subject_id = marks.subject_id
         //       LEFT JOIN grupo ON subject_teacher.grupo_id = grupo.grupo_id
         //       GROUP BY subjects.title, teachers.first_name, teachers.last_name;`;
-        
+          
         //     let [filas, campos] = await connection.execute(reto5);
-        
+          
         //     console.log('Numero alumnos:');
         //     console.table(filas);
         //   } catch (error) {
         //     await connection.end();
         //   }
+          
 
 
     }catch(err){
