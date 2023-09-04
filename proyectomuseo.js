@@ -14,46 +14,44 @@ async function main()
         });
 
         console.log('Conexión establecida');
-        
-        let params = ["en prestamo"];
-        let tipoprestamo = `SELECT piezas.pieza_id, piezas.nombre_pieza, localizacion.nombre_localizacion, prestamos.fecha_devolucion, propietariopiezas.nombre AS propietario_nombre,
-        propietariopiezas.apellidos AS propietario_apellidos, propietariopiezas.email
-          FROM piezas
-          INNER JOIN localizacion ON piezas.localizacion_id = localizacion.localizacion_id
-          INNER JOIN prestamos ON piezas.prestamos_id = prestamos.prestamos_id
-          INNER JOIN propietariopiezas ON prestamos.propietario_id = propietariopiezas.propietario_id
-          WHERE
-            prestamos.tipo_prestamo = ?`;
-       
-        connection.connect((err) => {
-            if (err) {
-              console.error('Error de conexión:', err);
-              return;
-            }
-          
-            
-            client.query(tipoprestamo, params, (err, results) => {
-              if (err) {
-                console.error('Error en la consulta:', err);
-              } else {
-                console.log("Query realizada");
-            
-                console.table(results);
-              }
-          
-              
-              connection.end();
-            });
-          });
 
 // - Obtener un listado de todos los objetos que el museo tiene en préstamo, su localización dentro
 // de la exposición, la fecha de expiración de este, la información básica (nombre, apellidos y
 // email) de la persona que los ha prestado.
+        
+
+        // try {
+        //   let tipoPrestamo = 'en prestamo';
+        
+        //   let consulta = `
+        //     SELECT piezas.pieza_id, piezas.nombre_pieza, localizacion.nombre_localizacion, prestamos.fecha_devolucion,
+        //       propietariopiezas.nombre AS propietario_nombre,
+        //       propietariopiezas.apellidos AS propietario_apellidos,
+        //       propietariopiezas.email
+        //     FROM piezas
+        //     INNER JOIN localizacion ON piezas.localizacion_id = localizacion.localizacion_id
+        //     INNER JOIN prestamos ON piezas.prestamos_id = prestamos.prestamos_id
+        //     INNER JOIN propietariopiezas ON prestamos.propietario_id = propietariopiezas.propietario_id
+        //     WHERE
+        //       prestamos.tipo_prestamo = ?;
+        //   `;
+        //   let [filas, campos] = await connection.execute(consulta, [tipoPrestamo]);
+        
+        //   console.log('Resultado:');
+        //   console.table(filas);
+        // } catch (error) {
+        //   await connection.end();
+        // }
+        
+
+
 
 
 // - Obtener de forma ordenada de mayor a menor, el número total de objetos o piezas agrupados
 // por su situación dentro de la organización, esto es, cuántos hay expuestos, cuántos en
 // itinerancia y cuántos almacenados.
+
+
 
 // try {
 //     let tipoexposicion = `SELECT colecciones.tipo_exposicion, COUNT(*) AS numero_piezas
