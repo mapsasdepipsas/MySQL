@@ -13,6 +13,18 @@ async function main()
 
         console.log('Conexión establecida');
 
+        //HCER PRIMER RETO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//calcular la nota media de los alumnos de la asignatura 1.
+
+// let media = "SELECT AVG(mark) FROM marks WHERE subject_id = 3;"
+
+//         let [result] = await connection.query(media);
+//         console.log('Nota media asignatura 1:');
+//         console.log(result);
+
+
+
+
         //NUMERO TOTAL ESTUDIANTES
         // let [rows] = await connection.execute('SELECT COUNT(*) AS numero_estudiantes FROM students');
         // let totalestudiantes = rows[0].numero_estudiantes;
@@ -27,29 +39,22 @@ async function main()
 
         // await connection.end();
 
-        //BORRAR NOTAS 2022 Y >5
+        // BORRAR NOTAS 2022 Y >5!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         // try {
-        //     // Crear una sentencia preparada con parámetros
         //     let year = new Date().getFullYear() - 1;
         //     let nota = 5;
         //     let borrar = 'DELETE FROM marks WHERE YEAR(date) = ? AND mark > ?';
         //     let [result] = await connection.execute(borrar, [year, nota]);
-        
         //     console.log(`Se han borrado ${result.affectedRows} notas.`);
-        //   } catch (error) {
-        //     console.error('Error al borrar las notas:', error);
-        //   } finally {
-        //     await connection.end();
-        //   }
+        // } catch (error) {
+        // }
 
-        //ESTUDIANTES AÑO INGRESO 2023
+        // ESTUDIANTES AÑO INGRESO 2023
         // try {
         //     let ingresoYear = 2023; // Puedes cambiar esto al valor deseado
-          
-        //     // Crear la sentencia preparada
+             
         //     let ingreso2023 = `SELECT * FROM students WHERE ingresoyear = ?;`;
-          
-        //     // Ejecutar la sentencia preparada con el valor proporcionado
+        
         //     let [filas, campos] = await connection.execute(ingreso2023, [ingresoYear]);
           
         //     console.table(filas);
